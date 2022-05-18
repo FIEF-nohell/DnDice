@@ -9,4 +9,8 @@ export class Tab1Page {
 
   constructor() {}
 
+  addDice(number){
+    //console.log((1 + Math.floor(Math.random() * number)))
+  }
+
 }

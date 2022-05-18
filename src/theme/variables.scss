@@ -74,6 +74,30 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --chipcolor1: #ef476e58;
+  --chiptextcolor1: #f95d82;
+
+  --chipcolor2: #f78c6b58;
+  --chiptextcolor2: #fea084;
+
+  --chipcolor3: #ffd16657;
+  --chiptextcolor3: #fbd57d;
+
+  --chipcolor4: #bbeb9659;
+  --chiptextcolor4: #d0fab0;
+
+  --chipcolor5: #06d69e5e;
+  --chiptextcolor5: #13fbbd;
+
+  --chipcolor6: #118ab254;
+  --chiptextcolor6: #21b0df;
+
+  --chipcolor7: #165a7155;
+  --chiptextcolor7: #207e9d;
+
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -89,6 +113,7 @@
     --ion-color-primary-contrast-rgb: 0, 0, 0;
     --ion-color-primary-shade: #e04055;
     --ion-color-primary-tint: #ff5b71;
+    
 
     --ion-color-secondary: #50c8ff;
     --ion-color-secondary-rgb: 80,200,255;
