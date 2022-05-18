@@ -1,0 +1,7 @@
+{
+  "name": "DnDice",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

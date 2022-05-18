@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "DnDice",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
