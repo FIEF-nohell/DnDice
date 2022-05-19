@@ -1,0 +1,5 @@
+ion-item {
+    --border-color: #3d3d3d; // default underline color
+    --highlight-color-invalid: var(--ion-color-primary); // invalid underline color
+    --highlight-color-valid: var(--ion-color-primary); // valid underline color
+}
