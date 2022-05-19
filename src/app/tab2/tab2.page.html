@@ -18,7 +18,7 @@
       <ion-card>
         <p></p>
       </ion-card>
-      <ion-card *ngFor="let set of bigSetArray">
+      <ion-card *ngFor="let set of bigSetArray" (click)="rollSet(set)">
         <ion-grid>
           <ion-row>
             <ion-col>

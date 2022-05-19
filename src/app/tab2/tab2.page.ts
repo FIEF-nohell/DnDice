@@ -59,4 +59,35 @@ export class Tab2Page implements OnInit{
     catch{
     }
   }
+
+  async rollSet(set){
+    let sum = await this.decodeSet(set)
+    console.log(sum)
+  }
+
+  async decodeSet(set){
+    let sum = 0
+    if(set[1] != 0){
+      for(let i = 0; i < set[1]; i++) sum = sum + (1 + Math.floor(Math.random() * 100))      
+    }
+    if(set[2] != 0){
+      for(let i = 0; i < set[2]; i++) sum = sum + (1 + Math.floor(Math.random() * 20))
+    }
+    if(set[3] != 0){
+      for(let i = 0; i < set[3]; i++) sum = sum + (1 + Math.floor(Math.random() * 12))
+    }
+    if(set[4] != 0){
+      for(let i = 0; i < set[4]; i++) sum = sum + (1 + Math.floor(Math.random() * 10))
+    }
+    if(set[5] != 0){
+      for(let i = 0; i < set[5]; i++) sum = sum + (1 + Math.floor(Math.random() * 8))
+    }
+    if(set[6] != 0){
+      for(let i = 0; i < set[6]; i++) sum = sum + (1 + Math.floor(Math.random() * 6))
+    }
+    if(set[7] != 0){
+      for(let i = 0; i < set[7]; i++) sum = sum + (1 + Math.floor(Math.random() * 4))
+    }
+    return sum
+  }
 }
