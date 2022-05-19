@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 
@@ -19,7 +20,7 @@ export class Tab2Page implements OnInit{
     this.readFromStorage()
   }
 
-  constructor(public storage: Storage) {}
+  constructor(public alertController: AlertController, public storage: Storage) {}
 
   bigSetArray: Array<any> = []
 
@@ -62,7 +63,7 @@ export class Tab2Page implements OnInit{
 
   async rollSet(set){
     let sum = await this.decodeSet(set)
-    console.log(sum)
+    this.presentAlert(set[0], sum)
   }
 
   async decodeSet(set){
@@ -89,5 +90,15 @@ export class Tab2Page implements OnInit{
       for(let i = 0; i < set[7]; i++) sum = sum + (1 + Math.floor(Math.random() * 4))
     }
     return sum
+  }
+
+  async presentAlert(setName, result) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: setName,
+      message: 'The result is: ' + result,
+      buttons: ['OK']
+    });
+    await alert.present();
   }
 }
