@@ -23,6 +23,7 @@ export class Tab1Page  implements OnInit{
 
   diceSet: Array<any> = []
   bigSetArray: Array<any> = []
+  clearArray: Array<any> = []
   saveName: string = ""
   d4 = 0
   d6 = 0
@@ -97,6 +98,8 @@ export class Tab1Page  implements OnInit{
       this.diceSet.push(this.d8)
       this.diceSet.push(this.d6)
       this.diceSet.push(this.d4)
+      let now = new Date()
+      this.diceSet.push(now.getTime())
       this.d4 = 0
       this.d6 = 0
       this.d8 = 0
@@ -118,7 +121,14 @@ export class Tab1Page  implements OnInit{
     }
     catch{
     }
-    this.storage.set("set", this.bigSetArray)
+  }
+
+  clearStorage(){
+    try{
+      this.storage.set("set", this.clearArray)
+    }
+    catch{
+    }
   }
 
   readFromStorage(){

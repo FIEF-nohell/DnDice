@@ -23,19 +23,40 @@ export class Tab2Page implements OnInit{
 
   bigSetArray: Array<any> = []
 
+  deleteSet(set){
+    let counter = 0
+    let index = 0
+    this.bigSetArray.forEach(subset => {
+      if(subset[8] == set[8]){
+        index = counter
+      }
+      else{
+        counter++
+      }
+    });
+    if (index > -1) {
+      this.bigSetArray.splice(index, 1);
+    }
+    this.writeToStorage()
+  }
+
+  writeToStorage(){
+    try{
+      this.storage.set("set", this.bigSetArray)
+    }
+    catch{
+    }
+  }
+
   readFromStorage(){
     try{
       this.storage.get("set").then((bigSetArray) => {
         if(bigSetArray != null){
           this.bigSetArray = bigSetArray
-          console.log(bigSetArray)
         }
       })
-      console.log("fetched data from device")
     }
     catch{
-      console.log("error fetching data from device")
     }
   }
-
 }

@@ -24,8 +24,8 @@
             <ion-col>
               <h1 style="margin: 0; font-size: 18px; color: white">{{set[0]}}</h1>
             </ion-col>
-            <ion-col>
-              <ion-icon style="" name="trash"></ion-icon>
+            <ion-col style="display: flex;">
+              <ion-icon class="del-icon" name="trash" (click)="deleteSet(set)"></ion-icon>
             </ion-col>
           </ion-row>
           <ion-row>
