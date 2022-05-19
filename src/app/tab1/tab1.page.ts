@@ -10,6 +10,12 @@ import { Storage } from '@ionic/storage';
 export class Tab1Page  implements OnInit{
 
   ngOnInit(){
+    this.storage.create()
+    this.readFromStorage()
+  }
+
+  ionViewDidEnter(){
+    this.storage.create()
     this.readFromStorage()
   }
 
@@ -99,7 +105,6 @@ export class Tab1Page  implements OnInit{
       this.d20 = 0
       this.d100 = 0
       this.saveName = ""
-      console.log(this.diceSet)
       this.bigSetArray.push(this.diceSet)
       this.diceSet = null
       this.diceSet = []
@@ -110,10 +115,8 @@ export class Tab1Page  implements OnInit{
   writeToStorage(){
     try{
       this.storage.set("set", this.bigSetArray)
-      console.log("saved data to device")
     }
     catch{
-      console.log("error saving data to device")
     }
     this.storage.set("set", this.bigSetArray)
   }
@@ -121,12 +124,12 @@ export class Tab1Page  implements OnInit{
   readFromStorage(){
     try{
       this.storage.get("set").then((bigSetArray) => {
-        this.bigSetArray = bigSetArray
+        if(bigSetArray != null){
+          this.bigSetArray = bigSetArray
+        }
       })
-      console.log("fetched data from device")
     }
     catch{
-      console.log("error fetching data from device")
     }
   }
 
