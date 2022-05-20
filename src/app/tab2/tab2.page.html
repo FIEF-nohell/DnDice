@@ -1,121 +1,79 @@
 <ion-content [fullscreen]="true">
-    <ion-card>
-        <p></p>
-      </ion-card>      
-      <ion-grid>
-        <ion-row style="display: flex; justify-content: center">
-          <ion-col style="display: flex; align-items: center" size="auto">
-            <ion-icon name="bookmarks-outline" style="width: 25px; height: 25px; padding: 0; "></ion-icon>
-          </ion-col>
-          <ion-col size="auto">
-            <h1 style="margin: 0;">saved sets</h1>
-          </ion-col>
-          <ion-col style="display: flex; align-items: center" size="auto">
-            <ion-icon name="bookmarks-outline" style="width: 25px; height: 25px; padding: 0; "></ion-icon>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-card>
-        <p></p>
-      </ion-card>
-      <ion-card *ngFor="let set of bigSetArray" (click)="rollSet(set)">
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <h1 style="margin: 0; font-size: 18px; color: white">{{set[0]}}</h1>
-            </ion-col>
-            <ion-col style="display: flex;">
-              <ion-icon class="del-icon" name="trash" (click)="deleteSet(set)"></ion-icon>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[1] != 0">
-              <ion-chip *ngIf="set[1] == 1" style="
-                  --color: var(--chiptextcolor1);
-                  --background: var(--chipcolor1);">
-                <ion-label>d100</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[1] >= 2" style="
-                  --color: var(--chiptextcolor1);
-                  --background: var(--chipcolor1);">
-                <ion-label>{{set[1]}} x d100</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[2] != 0">
-              <ion-chip *ngIf="set[2] == 1" style="
-                  --color: var(--chiptextcolor2);
-                  --background: var(--chipcolor2);">
-                <ion-label>d20</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[2] >= 2" style="
-                  --color: var(--chiptextcolor2);
-                  --background: var(--chipcolor2);">
-                <ion-label>{{set[2]}} x d20</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[3] != 0">
-              <ion-chip *ngIf="set[3] == 1" style="
-                  --color: var(--chiptextcolor3);
-                  --background: var(--chipcolor3);">
-                <ion-label>d12</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[3] >= 2" style="
-                  --color: var(--chiptextcolor3);
-                  --background: var(--chipcolor3);">
-                <ion-label>{{set[3]}} x d12</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[4] != 0">
-              <ion-chip *ngIf="set[4] == 1" style="
-                  --color: var(--chiptextcolor4);
-                  --background: var(--chipcolor4);">
-                <ion-label>d10</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[4] >= 2" style="
-                  --color: var(--chiptextcolor4);
-                  --background: var(--chipcolor4);">
-                <ion-label>{{set[4]}} x d10</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[5] != 0">
-              <ion-chip *ngIf="set[5] == 1" style="
-                  --color: var(--chiptextcolor5);
-                  --background: var(--chipcolor5);">
-                <ion-label>d8</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[5] >= 2" style="
-                  --color: var(--chiptextcolor5);
-                  --background: var(--chipcolor5);">
-                <ion-label>{{set[5]}} x d8</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[6] != 0">
-              <ion-chip *ngIf="set[6] == 1" style="
-                  --color: var(--chiptextcolor6);
-                  --background: var(--chipcolor6);">
-                <ion-label>d6</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[6] >= 2" style="
-                  --color: var(--chiptextcolor6);
-                  --background: var(--chipcolor6);">
-                <ion-label>{{set[6]}} x d6</ion-label>
-              </ion-chip>
-            </ion-col>
-            <ion-col size="auto" style="padding: 0" *ngIf="set[7] != 0">
-              <ion-chip *ngIf="set[7] == 1" style="
-                  --color: var(--chiptextcolor7);
-                  --background: var(--chipcolor7);">
-                <ion-label>d4</ion-label>
-              </ion-chip>
-              <ion-chip *ngIf="set[7] >= 2" style="
-                  --color: var(--chiptextcolor7);
-                  --background: var(--chipcolor7);">
-                <ion-label>{{set[7]}} x d4</ion-label>
-              </ion-chip>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card>
-      
-
+<ion-card>
+  <p></p>
+</ion-card>
+<ion-grid>
+  <ion-row style="display: flex; justify-content: center">
+    <ion-col style="display: flex; align-items: center" size="auto">
+      <ion-icon name="dice-outline" style="width: 25px; height: 25px; padding: 0"></ion-icon>
+    </ion-col>
+    <ion-col size="auto">
+      <h1 style="margin: 0">roll</h1>
+    </ion-col>
+    <ion-col style="display: flex; align-items: center" size="auto">
+      <ion-icon name="dice-outline" style="width: 25px; height: 25px; padding: 0"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row style="display: flex; justify-content: center">
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor1);
+          --background: var(--chipcolor1);
+        " (click)="roll(100)">
+        <ion-label>d100 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor2);
+          --background: var(--chipcolor2);
+        " (click)="roll(20)">
+        <ion-label>d20 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor3);
+          --background: var(--chipcolor3);
+        " (click)="roll(12)">
+        <ion-label>d12 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor4);
+          --background: var(--chipcolor4);
+        " (click)="roll(10)">
+        <ion-label>d10 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor5);
+          --background: var(--chipcolor5);
+        " (click)="roll(8)">
+        <ion-label>d8 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor6);
+          --background: var(--chipcolor6);
+        " (click)="roll(6)">
+        <ion-label>d6 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+    <ion-col size="auto" style="padding: 0">
+      <ion-chip style="
+          --color: var(--chiptextcolor7);
+          --background: var(--chipcolor7);
+        " (click)="roll(4)">
+        <ion-label>d4 dice</ion-label>
+      </ion-chip>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-card>
+  <p></p>
+</ion-card>
 </ion-content>
